@@ -1,12 +1,11 @@
-import React from 'react';
-// import logo from './logo.svg';
+import React from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.css";
+import "./App.css";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -22,8 +21,8 @@ function App() {
           <Container>
 
             <Navbar.Brand>
-              <Link to={"/student-list"} className="nav-link">
-                MERN App
+              <Link to={"/create-student"} className="nav-link">
+                App
               </Link>
             </Navbar.Brand>
 
@@ -33,6 +32,12 @@ function App() {
                   Create Student
                 </Link>
               </Nav>
+
+              {/* <Nav>
+                <Link to={"/edit-student/:id"} className="nav-link">
+                  Edit Student
+                </Link>
+              </Nav> */}
 
               <Nav>
                 <Link to={"/student-list"} className="nav-link">
