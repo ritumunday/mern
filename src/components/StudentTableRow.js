@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
+import {faTrash,faEdit} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export default class StudentTableRow extends Component {
 
@@ -13,7 +15,7 @@ export default class StudentTableRow extends Component {
     deleteStudent() {
         axios.delete('http://localhost:4000/students/delete-student/' + this.props.obj._id)
             .then((res) => {
-                console.log('Student successfully deleted!')
+                console.log('Student successfully deleted!'); alert("Deleted.");
             }).catch((error) => {
                 console.log(error)
             })
@@ -26,10 +28,11 @@ export default class StudentTableRow extends Component {
                 <td>{this.props.obj.email}</td>
                 <td>{this.props.obj.rollno}</td>
                 <td>
-                    <Link className="edit-link" to={"/edit-student/" + this.props.obj._id}>
-                        Edit
+                    <Link className="btn btn-primary" to={"/edit-student/" + this.props.obj._id}>
+                        <FontAwesomeIcon icon={faEdit} />   Edit
                     </Link>
-                    <Button onClick={this.deleteStudent} size="sm" variant="danger">Delete</Button>
+
+                    <Link className="btn btn-danger" onClick={this.deleteStudent} size="sm" variant="danger"> <FontAwesomeIcon icon={faTrash} /> Delete</Link>
                 </td>
             </tr>
         );

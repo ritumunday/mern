@@ -4,6 +4,7 @@ import Table from 'react-bootstrap/Table';
 import StudentTableRow from './StudentTableRow';
 
 
+
 export default class StudentList extends Component {
 
   constructor(props) {
@@ -33,20 +34,20 @@ export default class StudentList extends Component {
 
 
   render() {
-    return (<div className="table-wrapper">
-      <Table striped bordered hover>
-        <thead>
+    return (
+      <Table className={"table"}>
+        <thead className={"thead-dark "}>
           <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Roll No</th>
-            <th>Action</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Roll No</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
           {this.DataTable()}
         </tbody>
       </Table>
-    </div>);
+   );
   }
 }

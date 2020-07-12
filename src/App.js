@@ -17,8 +17,8 @@ function App() {
   return (<Router>
     <div className="App">
       <header className="App-header">
-        <Navbar bg="dark" variant="dark">
-          <Container>
+        <Navbar  >
+          <Container className={"container-sm"} >
 
             <Navbar.Brand>
               <Link to={"/create-student"} className="nav-link">
